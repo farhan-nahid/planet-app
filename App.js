@@ -1,7 +1,10 @@
+import { DarkTheme, NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
-import Text from './src/components/Text/Text';
+import Home from './src/screens/Home';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [loaded] = useFonts({
@@ -15,23 +18,15 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Text preset='h1'>Open up App.js to start working on your app!</Text>
-      <Text preset='h2'>Open up App.js to start working on your app!</Text>
-      {/* <Text style={{ marginTop: spacing[10], fontFamily: typography.primaryBold }}>
-        Open up App.js to start working on your app!
-      </Text> */}
-      <StatusBar style='dark' />
-    </View>
+    <>
+      <NavigationContainer theme={DarkTheme}>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name='Home' component={Home} />
+        </Stack.Navigator>
+      </NavigationContainer>
+      <StatusBar style='light' />
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+c;
