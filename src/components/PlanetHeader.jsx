@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import colors from '../theme/colors';
 import spacing from '../theme/spacing';
 import Text from './Text/Text';
 
@@ -13,6 +14,9 @@ export default function PlanetHeader({ children }) {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: spacing[10],
+    paddingHorizontal: spacing[10],
+    paddingVertical: spacing[10],
+    borderBottomColor: colors.white,
+    borderBottomWidth: 0.2,
   },
 });
